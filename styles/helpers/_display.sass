@@ -1,0 +1,31 @@
+.flex
+  display: flex !important
+
+.inline-flex
+  display: inline-flex !important
+
+.flex-col
+  flex-direction: column !important
+
+.justify-center
+  justify-content: center !important
+
+.items-center
+  align-items: center !important
+
+$gap-values: ("0": 0, "1": 0.25rem, "2": 0.5rem, "3": 0.75rem, "4": 1rem, "5": 1.5rem, "6": 3rem)
+
+@each $name, $value in $gap-values
+  .gap-#{$name}
+    gap: $value !important
+
+  .gap-x-#{$name}
+    column-gap: $value !important
+
+  .gap-y-#{$name}
+    row-gap: $value !important
+
+// Children
+
+.flex-1
+  flex: 1 !important

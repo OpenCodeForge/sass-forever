@@ -1,0 +1,30 @@
+@use 'variables' as *
+
+// Responsiveness
+
+=mobile
+  @media (max-width: $tablet - 1px)
+    @content
+
+=tablet
+  @media (min-width: $tablet)
+    @content
+
+=desktop
+  @media (min-width: $desktop)
+    @content
+
+=widescreen
+  @media (min-width: $widescreen)
+    @content
+
+=fullhd
+  @media (min-width: $fullhd)
+    @content
+
+
+// Dark mode
+
+=dark
+  html.dark &
+    @content

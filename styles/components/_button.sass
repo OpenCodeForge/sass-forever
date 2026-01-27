@@ -1,0 +1,19 @@
+@use '../utilities' as *
+
+.button
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  gap: .5rem
+  padding: .65rem 1rem
+  border-radius: .75rem
+  border: 1px solid rgba(0, 0, 0, .12)
+  background: white
+  cursor: pointer
+  text-decoration: none
+
+  &:hover
+    background: rgba(0, 0, 0, .03)
+
+  +tablet
+    padding: .75rem 1.1rem

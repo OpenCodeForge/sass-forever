@@ -1,0 +1,13 @@
+// Google Fonts
+// If @import causes blocking or is disallowed by your toolchain, prefer a <link> in HTML.
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap')
+
+// Local Fonts
+=font-face($family, $filename: $family, $weight: normal, $style: normal)
+  @font-face
+    font-family: $family
+    src: url('/fonts/#{$filename}.ttf') format('truetype')
+    font-weight: $weight
+    font-style: $style
+
++font-face('Great Sejagad', 'Great-Sejagad')
