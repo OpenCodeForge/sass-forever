@@ -2,6 +2,73 @@
 layout: default
 ---
 
-<div id="home">
-  <h1>Sass Forever – Write Sass. Stay organized. Forever.</h1>
-</div>
+<main class="container">
+  <header>
+    <h1 class="site-logo">
+      <img src="/images/logo.png" alt="Sass Forever" />
+    </h1>
+
+    <h2>A sane structure for modern styling</h2>
+
+    <p class="lead">
+      A simple file structure to start any project, with responsive
+      mixins, fonts, and helpers.
+    </p>
+  </header>
+
+  <div class="cta-buttons">
+    <a class="btn btn-primary" href="https://github.com/OpenCodeForge/sass-forever/" target="_blank">
+      <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.37 6.84 9.72.5.1.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.65.07-.64.07-.64 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.02-2.75-.1-.26-.44-1.3.1-2.7 0 0 .84-.27 2.75 1.05.8-.23 1.66-.34 2.52-.35.86.01 1.73.12 2.52.35 1.9-1.32 2.75-1.05 2.75-1.05.54 1.4.2 2.44.1 2.7.63.72 1.02 1.63 1.02 2.75 0 3.93-2.35 4.79-4.58 5.05.36.32.68.95.68 1.91 0 1.38-.01 2.5-.01 2.84 0 .26.18.58.69.48A10.06 10.06 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/>
+      </svg>
+      <span>View on GitHub</span>
+    </a>
+    <a class="btn btn-secondary" href="https://github.com/OpenCodeForge/sass-forever/archive/refs/heads/main.zip">
+      <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 3a1 1 0 0 1 1 1v8.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4.01 4a1 1 0 0 1-1.38 0l-4.01-4a1 1 0 1 1 1.4-1.42l2.3 2.3V4a1 1 0 0 1 1-1z"/>
+        <path d="M5 18a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z"/>
+      </svg>
+      <span>Download Starter.zip</span>
+    </a>
+  </div>
+
+  <section>
+    <pre><code>styles/
+  utilities/
+    _index.sass        # Public Sass API (forwards)
+    _variables.sass    # Design tokens, constants
+    _mixins.sass       # Responsive helpers, abstractions
+
+  helpers/
+    _index.sass        # Helpers entry point
+    _spacing.sass      # Margin, padding helpers
+    _visibility.sass   # Visibility, display helpers
+
+  layouts/
+    _index.sass        # Layouts public API
+    _container.sass    # Page container
+    _grid.sass         # Grid layouts
+
+  base/
+    _fonts.sass        # Local & external fonts
+    _reset.sass        # CSS reset / normalization
+    _typography.sass   # Global text styles
+
+  components/
+    _button.sass       # Buttons
+    _card.sass         # Cards
+    _modal.sass        # Modals
+
+  pages/
+    _home.sass         # Home page styles
+    _about.sass        # About page styles
+
+  application.sass    # Single compilation entry point</code></pre>
+  </section>
+
+  <footer>
+    <p>
+      Made with ❤️ by <a href="https://opencodeforge.com" target="_blank">OpenCodeForge</a>
+    </p>
+  </footer>
+</main>
