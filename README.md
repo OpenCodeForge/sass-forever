@@ -16,6 +16,9 @@ Just structure and clarity.
 
 ## 📁 File & Folder Architecture
 
+This is **not a framework** and there is **nothing to install**.  
+Simply follow this structure and **take inspiration from the file naming** in your own projects.
+
 ```text
 styles/
   utilities/
@@ -50,10 +53,9 @@ styles/
   application.sass    # Single compilation entry point
 ```
 
-This structure is intentionally explicit:
-- folders describe **responsibilities**
-- file names describe **intent**
-- nothing is implicit or magical
+Folders define **responsibilities**.  
+File names describe **intent**.  
+Nothing is implicit or magical.
 
 ---
 
@@ -83,18 +85,21 @@ This keeps the CSS output predictable and easy to reason about.
 
 ## 🧩 Example usage
 
-### Using variables and mixins
+### Using variables and fonts
 
 ```sass
 @use '../utilities' as *
 
 .title
+  font-family: $font-sans
   color: $primary-color
-  font-size: 1.2rem
-
-  +tablet
-    font-size: 1.5rem
+  font-weight: 600
 ```
+
+Fonts are defined once (in `base/_fonts.sass`)  
+and reused consistently across the project.
+
+---
 
 ### Responsive mixins (mobile-first)
 
@@ -145,9 +150,6 @@ Each file does one thing.
 
 There are many ways to write CSS.
 
-**Sass Forever** is one that stays:
-- readable
-- maintainable
-- adaptable over time
+**Sass Forever** is one that stays readable and maintainable over time.
 
 Just a way. 🤘
