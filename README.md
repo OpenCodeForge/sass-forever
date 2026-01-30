@@ -30,6 +30,7 @@ styles/
     _index.sass        # Helpers entry point
     _spacing.sass      # Margin, padding helpers
     _visibility.sass   # Visibility, display helpers
+    _flex.sass         # Flexbox helpers (layout & alignment)
 
   layouts/
     _index.sass        # Layouts public API
