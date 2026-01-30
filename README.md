@@ -28,7 +28,7 @@ styles/
 
   helpers/
     _index.sass        # Helpers entry point
-    _spacing.sass      # Margin, padding helpers
+    _spacing.sass      # Spacing helpers (margin, padding, gap)
     _visibility.sass   # Visibility, display helpers
     _flex.sass         # Flexbox helpers (layout & alignment)
 
