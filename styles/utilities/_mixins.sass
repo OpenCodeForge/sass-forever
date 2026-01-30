@@ -1,6 +1,24 @@
 @use 'variables' as *
 
-// Responsiveness
+// Responsive & context mixins
+// -----------------------------------------------------------------------------
+// Helpers for responsive styles and global UI contexts (e.g. dark mode).
+//
+// Example usage:
+// .card
+//   background: #fff
+//
+//   +tablet
+//     padding: 1.5rem
+//
+//   +dark
+//     background: #111
+//     color: #fff
+//
+// Notes:
+// - Responsive mixins are mobile-first
+// - Dark mode styles are applied when a `.dark` class is present on <html>
+// -----------------------------------------------------------------------------
 
 =mobile
   @media (max-width: $tablet - 1px)
@@ -24,7 +42,7 @@
 
 
 // Dark mode
-
+// Applies styles when `html` has a `.dark` class
 =dark
   html.dark &
     @content

@@ -1,9 +1,19 @@
-@use '../utilities/mixins' as *
+@use '../utilities' as *
+
+// Visibility helpers
+// -----------------------------------------------------------------------------
+// Utilities to hide elements globally or per breakpoint.
+//
+// Example usage:
+// <p class="hidden">Hidden everywhere</p>
+// <p class="hidden-mobile">Hidden on mobile only</p>
+// -----------------------------------------------------------------------------
 
 // Global
 
 .hidden
   display: none !important
+
 
 // Responsive helpers
 
