@@ -1,4 +1,17 @@
 // Spacing helpers (margin / padding / gap)
+// -----------------------------------------------------------------------------
+// Generic spacing utilities for margins, paddings and gaps.
+//
+// Example usage:
+// <div class="container my-4">
+//   <div class="grid grid-cols-3 gap-3">
+//     <div class="p-2">Item</div>
+//     <div class="p-2">Item</div>
+//     <div class="p-2">Item</div>
+//   </div>
+// </div>
+// -----------------------------------------------------------------------------
+
 
 $spacing-shortcuts: ("margin": "m", "padding": "p")
 $spacing-directions: ("top": "t", "right": "r", "bottom": "b", "left": "l")
@@ -29,7 +42,6 @@ $spacing-values: ("0": 0, "1": 0.25rem, "2": 0.5rem, "3": 0.75rem, "4": 1rem, "5
 
 
 // Gap helpers (works for flex and grid)
-
 @each $name, $value in $spacing-values
   .gap-#{$name}
     gap: $value !important
