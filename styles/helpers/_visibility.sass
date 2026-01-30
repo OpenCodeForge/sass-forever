@@ -1,24 +1,28 @@
 @use '../utilities/mixins' as *
 
-.is-hidden
+// Global
+
+.hidden
   display: none !important
 
+// Responsive helpers
+
 +mobile
-  .is-hidden-mobile
+  .hidden-mobile
     display: none !important
 
 +tablet
-  .is-hidden-tablet
+  .hidden-tablet
     display: none !important
 
 +desktop
-  .is-hidden-desktop
+  .hidden-desktop
     display: none !important
 
 +widescreen
-  .is-hidden-widescreen
+  .hidden-widescreen
     display: none !important
 
 +fullhd
-  .is-hidden-fullhd
+  .hidden-fullhd
     display: none !important
