@@ -29,13 +29,13 @@ styles/
   helpers/
     _index.sass        # Helpers entry point
     _spacing.sass      # Spacing helpers (margin, padding, gap)
-    _visibility.sass   # Visibility, display helpers
-    _flex.sass         # Flexbox helpers (layout & alignment)
+    _visibility.sass   # Visibility helpers (display)
+    _flex.sass         # Flexbox helpers (alignment & flow)
+    _grid.sass         # Grid helpers (columns & rows)
 
   layouts/
     _index.sass        # Layouts public API
     _container.sass    # Page container
-    _grid.sass         # Grid layouts
 
   base/
     _fonts.sass        # Local & external fonts
