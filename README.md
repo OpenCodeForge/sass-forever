@@ -21,7 +21,7 @@ styles/
 
   base/
     _fonts.sass              # Font loading (@font-face, Google Fonts…)
-    _reset.sass              # Generic reset
+    _reset.sass              # Generic reset (kept neutral)
 
   layout/
     _app.sass                # Global elements (body, h1, p…) + app shell
@@ -29,7 +29,7 @@ styles/
     _footer.sass
 
   components/
-    _container.sass          # Width constraint & horizontal padding
+    _container.sass          # Max-width + horizontal padding wrapper
     _button.sass
     _card.sass
     _modal.sass
