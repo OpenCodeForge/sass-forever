@@ -1,12 +1,18 @@
-@use '../utilities' as *
+// Home page
+// -----------------------------------------------------------------------------
+// Scoped to body.home
+// -----------------------------------------------------------------------------
 
-#home
-  font-family: $font-body
-  padding: 1rem
 
-  h1
-    font-family: $font-title
-    font-size: 16px
+body.home
 
-    +tablet
-      font-size: 18px
+  .hero
+    padding-block: 4rem
+    text-align: center
+
+  .hero-title
+    font-size: 2.5rem
+
+  .hero-subtitle
+    font-size: 1.25rem
+    opacity: 0.8

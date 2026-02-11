@@ -1,0 +1,24 @@
+// Max-width + horizontal padding wrapper
+// -----------------------------------------------------------------------------
+// Usage:
+//   <div class="container">
+//     ...
+//   </div>
+//
+// Provides a centered content wrapper with
+// a max-width and horizontal padding.
+// -----------------------------------------------------------------------------
+
+@use '../utilities' as *
+
+.container
+  width: 100%
+  max-width: 72rem
+  margin-inline: auto
+  padding-inline: 1rem
+
+  +tablet
+    padding-inline: 1.5rem
+
+  +desktop
+    padding-inline: 2rem
