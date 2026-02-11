@@ -1,108 +1,82 @@
 # Sass Forever 🤘
 
 **Sass Forever** is not a CSS framework.  
-It’s a **simple, pragmatic way** to organize your styles so they stay readable, scalable, and sane over time.
+It's a simple, opinionated structure to organize your Sass projects so they stay readable and scalable over time.
 
-It focuses on:
-- 🧠 a **shared mental model** for teams
-- 🗂 a **clear separation of responsibilities**
-- 🔧 Sass used as a **compiler**, not a framework
-- 📦 compatibility with any stack (Rails, Laravel, JS frameworks, or none)
-
-No magic. No heavy abstractions.  
-Just structure and clarity.
+No installation.  
+No magic.  
+Just structure.
 
 ---
 
-## 📁 File & Folder Architecture
+## 📁 Architecture
 
-This is **not a framework** and there is **nothing to install**.  
-Simply follow this structure and **take inspiration from the file naming** in your own projects.
+Follow this structure and adapt it to your own projects.
 
-```text
+```
 styles/
   utilities/
-    _index.sass        # Public Sass API (forwards)
-    _variables.sass    # Design tokens, constants
-    _mixins.sass       # Responsive helpers, abstractions
-
-  helpers/
-    _index.sass        # Helpers entry point
-    _spacing.sass      # Spacing helpers (margin, padding, gap)
-    _visibility.sass   # Visibility helpers (display)
-    _flex.sass         # Flexbox helpers (alignment & flow)
-    _grid.sass         # Grid helpers (columns & rows)
-
-  layouts/
-    _index.sass        # Layouts public API
-    _container.sass    # Page container
+    _variables.sass          # Design tokens (colors, font families, breakpoints…)
+    _mixins.sass             # Mixins & responsive helpers (+tablet, +desktop…)
 
   base/
-    _fonts.sass        # Local & external fonts
-    _reset.sass        # CSS reset / normalization
-    _typography.sass   # Global text styles
+    _fonts.sass              # Font loading (@font-face, Google Fonts…)
+    _reset.sass              # Generic reset
+
+  layout/
+    _app.sass                # Global elements (body, h1, p…) + app shell
+    _header.sass
+    _footer.sass
 
   components/
-    _button.sass       # Buttons
-    _card.sass         # Cards
-    _modal.sass        # Modals
+    _container.sass          # Width constraint & horizontal padding
+    _button.sass
+    _card.sass
+    _modal.sass
 
   pages/
-    _home.sass         # Home page styles
-    _about.sass        # About page styles
+    _home.sass
+    _about.sass
 
-  application.sass    # Single compilation entry point
+  helpers/
+    _spacing.sass            # Margin & padding helpers (.mt-2, .px-4…)
+    _visibility.sass         # Visibility helpers (.hidden, .block…)
+    _flex.sass               # Flex helpers (.flex, .items-center…)
+    _grid.sass               # Grid helpers (.grid, .col-6…)
+
+  styles.sass                # Single compilation entry point
 ```
 
-Folders define **responsibilities**.  
-File names describe **intent**.  
-Nothing is implicit or magical.
+Each folder has one responsibility.  
+Each file does one thing.
+
+Every folder should contain a private `_index.sass` file that forwards its internal files,  
+so the main entry point stays minimal and explicit.
 
 ---
 
-## 🏁 application.sass
+## 🏁 Entry Point
 
-There is **one and only one** file that gets compiled.
+Only one file is compiled:
 
 ```sass
-@use 'base/fonts'
-@use 'base/reset'
-@use 'base/typography'
+// styles.sass
 
-@use 'layouts'
-@use 'helpers'
-
-@use 'components/button'
-@use 'components/card'
-
-@use 'pages/home'
-@use 'pages/about'
+@use 'base'        // Reset + font loading
+@use 'layout'      // App shell + global element styling
+@use 'components'  // Reusable UI blocks
+@use 'pages'       // Page-specific context
+@use 'helpers'     // Global helper classes
 ```
 
-Everything else is imported explicitly.  
-This keeps the CSS output predictable and easy to reason about.
+All global element styling (body, h1, p, etc.) lives in `layout/_app.sass`.
 
 ---
 
-## 🧩 Example usage
+## 🛠 Using Utilities (Variables & Mixins)
 
-### Using variables and fonts
-
-```sass
-@use '../utilities' as *
-
-.title
-  font-family: $font-sans
-  color: $primary-color
-  font-weight: 600
-```
-
-Fonts are defined once (in `base/_fonts.sass`)  
-and reused consistently across the project.
-
----
-
-### Responsive mixins (mobile-first)
+Utilities are not loaded globally in the entry point.  
+They are imported only where needed.
 
 ```sass
 @use '../utilities' as *
@@ -112,45 +86,62 @@ and reused consistently across the project.
 
   +tablet
     padding: 24px
-
-  +desktop
-    padding: 32px
 ```
 
-Mixins centralize breakpoints and keep responsive rules consistent across the project.
+Utilities provide design tokens and mixins,  
+but do not generate CSS on their own.
 
 ---
 
-### Using helpers in HTML
+## 📄 Page Naming Convention
 
-```html
-<div class="container my-2">
-  <p class="hidden">This text is visually hidden</p>
-</div>
+Page styles should be scoped using body classes.
+
+```sass
+// pages/_dashboard.sass
+body.dashboard
+  ...
 ```
 
-Helpers are global, simple, and designed to be obvious at a glance.
+For nested pages:
+
+```sass
+// pages/dashboard/_settings.sass
+body.dashboard
+  &.dashboard-settings
+    ...
+```
+
+The page defines the context.  
+Components remain reusable.
 
 ---
 
-## 🧠 How to read this structure
+## 🧩 Multiple Modules
 
-- 🛠 **utilities/** → Sass logic only, no CSS output  
-- 🧩 **helpers/** → small, global utility classes  
-- 🧱 **layouts/** → structural building blocks (space & flow)  
-- 🎨 **base/** → global foundations (fonts, reset, typography)  
-- 🧩 **components/** → visual UI elements  
-- 📄 **pages/** → page-specific context  
+If your project has multiple modules (for example `website` and `admin`),  
+duplicate the structure inside each module:
 
-Each layer has a clear role.  
-Each file does one thing.
+```
+styles/
+  website/
+    ...
+    styles.sass   # Entry point
+  admin/
+    ...
+    styles.sass   # Entry point
+```
+
+Each module owns its styles and its compilation entry point.
 
 ---
 
-## 🏁 Final Words
+## 🧠 Philosophy
 
-There are many ways to write CSS.
+- One responsibility per folder
+- One responsibility per file
+- One compilation entry point
+- No implicit magic
 
-**Sass Forever** is one that stays readable and maintainable over time.
-
-Just a way. 🤘
+**Sass Forever** is not a framework.  
+It's just a way. 🤘
