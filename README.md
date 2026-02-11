@@ -16,35 +16,35 @@ Follow this structure and adapt it to your own projects.
 ```
 styles/
   utilities/
-    _variables.sass          # Design tokens (colors, font families, breakpoints…)
-    _mixins.sass             # Mixins & responsive helpers (+tablet, +desktop…)
+    _variables.sass   # Colors, font families, breakpoints…
+    _mixins.sass      # Mixins & responsive helpers (+tablet, +desktop…)
 
   base/
-    _fonts.sass              # Font loading (@font-face, Google Fonts…)
-    _reset.sass              # Generic reset (kept neutral)
+    _fonts.sass       # Font loading (@font-face, Google Fonts…)
+    _reset.sass       # Generic reset (kept neutral)
 
   layout/
-    _app.sass                # Global elements (body, h1, p…) + app shell
+    _app.sass         # Global elements (body, h1, p…) + app shell
     _header.sass
     _footer.sass
 
-  components/
-    _container.sass          # Max-width + horizontal padding wrapper
+  components/         # Reusable UI blocks
+    _container.sass   # Max-width + horizontal padding wrapper
     _button.sass
     _card.sass
     _modal.sass
 
-  pages/
+  pages/              # Page-specific context
     _home.sass
     _about.sass
 
   helpers/
-    _spacing.sass            # Margin & padding helpers (.mt-2, .px-4…)
-    _visibility.sass         # Visibility helpers (.hidden, .block…)
-    _flex.sass               # Flex helpers (.flex, .items-center…)
-    _grid.sass               # Grid helpers (.grid, .col-6…)
+    _spacing.sass     # Spacing helpers (margin, padding, gap…)
+    _visibility.sass  # Visibility helpers (.hidden, .block…)
+    _flex.sass        # Flex helpers (.flex, .items-center…)
+    _grid.sass        # CSS Grid helpers (.grid, .grid-cols-2…)
 
-  styles.sass                # Single compilation entry point
+  styles.sass         # Single compilation entry point
 ```
 
 Each folder has one responsibility.  
