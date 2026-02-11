@@ -35,37 +35,35 @@ layout: default
   <section>
     <pre><code>styles/
   utilities/
-    _index.sass        # Public Sass API (forwards)
-    _variables.sass    # Design tokens, constants
-    _mixins.sass       # Responsive helpers, abstractions
-
-  helpers/
-    _index.sass        # Helpers entry point
-    _spacing.sass      # Spacing helpers (margin, padding, gap)
-    _visibility.sass   # Visibility, display helpers
-    _flex.sass         # Flexbox helpers (layout & alignment)
-    _grid.sass         # Grid helpers (basic layout structure)
-
-  layouts/
-    _index.sass        # Layouts public API
-    _container.sass    # Page container
-    _grid.sass         # Grid layouts
+    _variables.sass          # Design tokens (colors, font families, breakpoints…)
+    _mixins.sass             # Mixins & responsive helpers (+tablet, +desktop…)
 
   base/
-    _fonts.sass        # Local & external fonts
-    _reset.sass        # CSS reset / normalization
-    _typography.sass   # Global text styles
+    _fonts.sass              # Font loading (@font-face, Google Fonts…)
+    _reset.sass              # Generic reset (kept neutral)
+
+  layout/
+    _app.sass                # Global elements (body, h1, p…) + app shell
+    _header.sass
+    _footer.sass
 
   components/
-    _button.sass       # Buttons
-    _card.sass         # Cards
-    _modal.sass        # Modals
+    _container.sass          # Max-width + horizontal padding wrapper
+    _button.sass
+    _card.sass
+    _modal.sass
 
   pages/
-    _home.sass         # Home page styles
-    _about.sass        # About page styles
+    _home.sass
+    _about.sass
 
-  application.sass    # Single compilation entry point</code></pre>
+  helpers/
+    _spacing.sass            # Margin & padding helpers (.mt-2, .px-4…)
+    _visibility.sass         # Visibility helpers (.hidden, .block…)
+    _flex.sass               # Flex helpers (.flex, .items-center…)
+    _grid.sass               # Grid helpers (.grid, .col-6…)
+
+  styles.sass                # Single compilation entry point</code></pre>
   </section>
 
   <footer>
