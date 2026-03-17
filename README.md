@@ -24,7 +24,7 @@ styles/
     _reset.sass       # Generic reset (kept neutral)
 
   layout/
-    _app.sass         # Global elements (body, h1, p…) + app shell
+    _global.sass      # Global elements (body, h1, p…) + app shell
     _header.sass
     _footer.sass
 
